@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0041)https://coupdekai.github.io/WarchestCalc/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Safekeeping Withdrawal Request Form</title>
+
+<style type="text/css">
+html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
+.container { width: 300px; margin: 50px auto; border: 2px solid #888; background: #fff; padding: 20px; }
+	input#nation, input#passcode {
+        border: 2px solid hsl(0, 76%, 50%);
+	outline: none;
+      }
+	input#food, input#coal, input#oil, input#uranium, input#iron, input#bauxite, input#lead, input#gasoline, input#munitions, input#steel, input#aluminum, input#money {
+        border: 2px solid hsl(30, 76%, 10%);
+	outline: none;
+      }
+      /* Show red borders when filled, but invalid */
+      input:not(:placeholder-shown)#food, input:not(:placeholder-shown)#coal, input:not(:placeholder-shown)#oil, input:not(:placeholder-shown)#uranium, input:not(:placeholder-shown)#iron, input:not(:placeholder-shown)#bauxite, input:not(:placeholder-shown)#lead, input:not(:placeholder-shown)#gasoline, input:not(:placeholder-shown)#munitions {
+        border-color: hsl(0, 76%, 50%);
+      }
+      input:not(:placeholder-shown)#steel, input:not(:placeholder-shown)#aluminum, input:not(:placeholder-shown)#money {
+        border-color: hsl(0, 76%, 50%);
+      }
+      /* Show green borders when valid */
+      input:valid#nation, input:valid#passcode, input:valid#food, input:valid#coal, input:valid#oil, input:valid#uranium, input:valid#iron, input:valid#bauxite, input:valid#lead, input:valid#gasoline, input:valid#munitions, input:valid#steel, input:valid#aluminum, input:valid#money {
+        border-color: hsl(120, 76%, 50%);
+     }
+</style>
+
+<script>
+function CalcSafekeeping(nation,passcode,food,coal,oil,uranium,iron,bauxite,lead,gasoline,munitions,steel,aluminum,money) {
+  if(isNaN(nation)) {
+    document.getElementById("debug").innerHTML = "<br><br>";
+  }
+  else if(isNaN(passcode)) {
+    document.getElementById("debug").innerHTML = "<br><br>";
+  }
+  else if (nation.length > 0 && passcode.length == 6) {
+    document.getElementById("debug").innerHTML = "<br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSefdJWYbJbFO5pYQLvOiClm_irSKlHJTjed03gWFEmTJToddg/formResponse?usp=pp_url&entry.541912927="+nation+"&entry.568201386="+passcode+"&entry.2030803038="+food+"&entry.1700468894="+coal+"&entry.855725492="+oil+"&entry.1878684095="+uranium+"&entry.76164747="+iron+"&entry.728752954="+bauxite+"&entry.1456764378="+lead+"&entry.1741200126="+gasoline+"&entry.900281627="+munitions+"&entry.172850479="+steel+"&entry.1139635514="+aluminum+"&entry.29718231="+money+"&submit=Submit'\" value=\"Submit Safekeeping Withdraw Request\" />";
+  }
+  else {
+    document.getElementById("debug").innerHTML = "<br><br>";
+  }
+}
+</script>
+
+</head>
+
+<body>
+ <div class="container">
+  <h3>Safekeeping Withdrawal Request Form</h3>
+  <p>Defaults are 0 if left blank</br>ID and Passcode must not be blank</p>
+  <table>
+  <tbody><tr>
+    <td>Your Nation ID:</td>
+    <td><input type="text" class="inputNationID" id="nation" name="nation" placeholder="Not Nation/Ruer Name!" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(this.value,passcode.value,food.value,coal.value,oil.value,uranium.value,iron.value,bauxite.value,lead.value,gasoline.value,munitions.value,steel.value,aluminum.value,money.value);"></td>
+    <td style="color:red; font-weight:bold;">*</td>
+  </tr>
+  <tr>
+    <td>Safekeeping Passcode:</td>
+    <td><input type="text" class="inputPasscode" id="passcode" name="passcode" placeholder="6 digit code from Gov" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,this.value,food.value,coal.value,oil.value,uranium.value,iron.value,bauxite.value,lead.value,gasoline.value,munitions.value,steel.value,aluminum.value,money.value);"></td>
+    <td style="color:red; font-weight:bold;">*</td>
+  </tr>
+  <tr>
+    <td>Food:</td>
+    <td><input type="text" class="inputFood" id="food" name="food" placeholder="Food" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,passcode.value,this.value,coal.value,oil.value,uranium.value,iron.value,bauxite.value,lead.value,gasoline.value,munitions.value,steel.value,aluminum.value,money.value);"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Coal:</td>
+    <td><input type="text" class="inputCoal" id="coal" name="coal" placeholder="Coal" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,passcode.value,food.value,this.value,oil.value,uranium.value,iron.value,bauxite.value,lead.value,gasoline.value,munitions.value,steel.value,aluminum.value,money.value);"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Oil:</td>
+    <td><input type="text" class="inputOil" id="oil" name="oil" placeholder="Oil" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,passcode.value,food.value,coal.value,this.value,uranium.value,iron.value,bauxite.value,lead.value,gasoline.value,munitions.value,steel.value,aluminum.value,money.value);"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Uranium:</td>
+    <td><input type="text" class="inputUranium" id="uranium" name="uranium" placeholder="Uranium" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,passcode.value,food.value,coal.value,oil.value,this.value,iron.value,bauxite.value,lead.value,gasoline.value,munitions.value,steel.value,aluminum.value,money.value);"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Iron:</td>
+    <td><input type="text" class="inputIron" id="iron" name="iron" placeholder="Iron" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,passcode.value,food.value,coal.value,oil.value,uranium.value,this.value,bauxite.value,lead.value,gasoline.value,munitions.value,steel.value,aluminum.value,money.value);"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Bauxite:</td>
+    <td><input type="text" class="inputBauxite" id="bauxite" name="bauxite" placeholder="Bauxite" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,passcode.value,food.value,coal.value,oil.value,uranium.value,iron.value,this.value,lead.value,gasoline.value,munitions.value,steel.value,aluminum.value,money.value);"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Lead:</td>
+    <td><input type="text" class="inputLead" id="lead" name="lead" placeholder="Lead" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,passcode.value,food.value,coal.value,oil.value,uranium.value,iron.value,bauxite.value,this.value,gasoline.value,munitions.value,steel.value,aluminum.value,money.value);"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Gasoline:</td>
+    <td><input type="text" class="inputGasoline" id="gasoline" name="gasoline" placeholder="Gasoline" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,passcode.value,food.value,coal.value,oil.value,uranium.value,iron.value,bauxite.value,lead.value,this.value,munitions.value,steel.value,aluminum.value,money.value);"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Munitions:</td>
+    <td><input type="text" class="inputMunitions" id="munitions" name="munitions" placeholder="Munitions" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,passcode.value,food.value,coal.value,oil.value,uranium.value,iron.value,bauxite.value,lead.value,gasoline.value,this.value,steel.value,aluminum.value,money.value);"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Steel:</td>
+    <td><input type="text" class="inputSteel" id="steel" name="steel" placeholder="Steel" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,passcode.value,food.value,coal.value,oil.value,uranium.value,iron.value,bauxite.value,lead.value,gasoline.value,munitions.value,this.value,aluminum.value,money.value);"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Aluminum:</td>
+    <td><input type="text" class="inputAluminum" id="aluminum" name="aluminum" placeholder="Aluminum" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,passcode.value,food.value,coal.value,oil.value,uranium.value,iron.value,bauxite.value,lead.value,gasoline.value,munitions.value,steel.value,this.value,money.value);"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Money:</td>
+    <td><input type="text" class="inputMoney" id="money" name="money" placeholder="Money" required="" pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcSafekeeping(nation.value,passcode.value,food.value,coal.value,oil.value,uranium.value,iron.value,bauxite.value,lead.value,gasoline.value,munitions.value,steel.value,aluminum.value,this.value);"></td>
+    <td></td>
+  </tr>
+</tbody></table>
+  <div id="debug"><br><br></div>
+ </div>
+
+
+
+
+
+
+</body></html>
